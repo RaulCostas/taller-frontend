@@ -1,0 +1,77 @@
+import type { Seguro } from './seguro';
+import type { Inspector } from './inspector';
+import type { MarcaAuto } from './marcaAuto';
+import type { TipoVehiculo } from './tipoVehiculo';
+import type { User } from './user';
+
+export interface OrdenTrabajo {
+    id: number;
+    particular_seguro: string;
+    fecha_registro: string;
+    fecha_inicio?: string;
+    fecha_fin?: string;
+    cliente: string;
+    direccion?: string;
+    celular?: string;
+    nit?: string;
+    correo?: string;
+    seguro?: Seguro;
+    inspector?: Inspector;
+    marca_auto?: MarcaAuto;
+    modelo: string;
+    placa: string;
+    color?: string;
+    anio?: number;
+    tipo_vehiculo?: TipoVehiculo;
+    motor?: string;
+    chasis?: string;
+    km_ingreso?: number;
+    km_egreso?: number;
+    codigo_pintura?: string;
+    plazo_entrega?: number;
+    moneda: string;
+    sub_total: number;
+    descuento: number;
+    total: number;
+    observaciones?: string;
+    facturado: boolean;
+    cancelado: boolean;
+    usuario?: User;
+    estado: string;
+}
+
+export interface CreateOrdenTrabajoData {
+    particular_seguro: string;
+    fecha_recepcion?: string;
+    fecha_inicio?: string;
+    fecha_fin?: string;
+    cliente: string;
+    direccion?: string;
+    celular?: string;
+    nit?: string;
+    correo?: string;
+    idseguro?: string;
+    idinspector?: string;
+    idmarca_auto: number;
+    modelo: string;
+    placa: string;
+    color?: string;
+    anio?: number;
+    idtipo_vehiculo: number;
+    motor?: string;
+    chasis?: string;
+    km_ingreso?: number;
+    km_egreso?: number;
+    codigo_pintura?: string;
+    plazo_entrega?: number;
+    moneda: string;
+    sub_total: number;
+    descuento: number;
+    total: number;
+    observaciones?: string;
+    facturado: boolean;
+    cancelado: boolean;
+    idusuario: string;
+    estado: string;
+    detalles?: any[];
+}
